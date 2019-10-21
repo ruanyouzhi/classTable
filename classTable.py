@@ -62,7 +62,7 @@ def editICShead():
     t_n = b_new_file.write("BEGIN:VCALENDAR\n" +
                            "METHOD:PUBLISH\n" +
                            "VERSION:2.0\n" +
-                           "COMMENT:本软件服务由中国石油大学（华东）网络信息协会提供，代码编写人员：李恒源，杨国铭，田继林，本代码半开源，使用本软件造成的法律后果由使用者承担。需要代码请联系李恒源：870575989@qq.com\n"
+                           "COMMENT:开源，免费"
                            "X-WR-CALNAME:课程\n" +
                            "PRODID:-//Apple Inc.//Mac OS X 10.14.6//EN\n" +
                            "X-APPLE-CALENDAR-COLOR:#1D9BF6\n" +
