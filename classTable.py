@@ -8,12 +8,12 @@ Created on Mon Oct 21 12:31:08 2019
 import requests
 import json
 import time
-def getInfo(username="1707020110",password="225217"):
+def getInfo(username="***",password="***"):
     ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
     with requests.Session() as s:
         captcha_headers = {'User-Agent': ua}
         payload = {"username": username, "password": password}
-        login = s.post('https://app.upc.edu.cn/uc/wap/login/check', data=payload, allow_redirects=True)
+        login = s.post('https://app***/uc/wap/login/check', data=payload, allow_redirects=True)
         #print(login.text)
         mark=int(0)
         classTable = [[" " for i in range(6)]for i in range(17*7*7)]
@@ -22,7 +22,7 @@ def getInfo(username="1707020110",password="225217"):
         year=2019
         for week in range(17):
             schedule_payload = {"year": "2019-2020", "term": 1, "week": week, "type": 1}
-            schedule = s.post('https://app.upc.edu.cn/timetable/wap/default/get-datatmp', data=schedule_payload)
+            schedule = s.post('https://app***/timetable/wap/default/get-datatmp', data=schedule_payload)
             dict = json.loads(schedule.text)
             dict = json.loads(schedule.text)['d']['classes']
             n=len(dict)
@@ -46,13 +46,7 @@ def getInfo(username="1707020110",password="225217"):
                 classNum+=1
         for i in range(classNum):
            print(classTable[i])
-'''
-        week=1
-        schedule_payload = {"year": "2019-2020", "term": 1, "week": week, "type": 1}
-        schedule = s.post('https://app.upc.edu.cn/timetable/wap/default/get-datatmp', data=schedule_payload)
-        
-        print(dict)
-'''
+
 def editICSfoot():
     t_n = b_new_file.write("END:VCALENDAR\n")
     b_new_file.close()
